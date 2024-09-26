@@ -7,4 +7,7 @@ app.get('/', (req, res) => {
     res.send('Hello Express');
   });
 
+  let absolutePath = __dirname + '/views/index.html';
+
+
 module.exports = app;
