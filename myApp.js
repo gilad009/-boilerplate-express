@@ -1,15 +1,16 @@
 let express = require('express');
 let app = express();
-require('dotenv').config()
+require('dotenv').config();
+let path = require('path');
 
 console.log("Hello World");
 
 // Serve static files from the 'public' directory to the '/public' path
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Serve the index.html file for the root path
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
 // Handle the /json route
