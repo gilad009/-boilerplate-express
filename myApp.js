@@ -11,4 +11,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+// Serve JSON response for the /json route
+app.get('/json', (req, res) => {
+    res.json({message: "Hello json"});
+});
+
 module.exports = app;
